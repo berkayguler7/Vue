@@ -22,6 +22,8 @@
       <button v-on:click="setCounter(parameter*1)">Add</button>
       <button v-on:click="setCounter(-parameter)">Remove</button>
       <p>Result: {{ counter }}</p>
+      <input type="text" v-on:input="setName" />
+      <p>{{ name }}</p>
     </section>
   </body>
 </html>
