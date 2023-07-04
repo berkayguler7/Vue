@@ -2,7 +2,7 @@ const app = Vue.createApp({
   data() {
     return {
       counter: 0,
-      name: ''
+      name: ""
     };
   },
   methods: {
@@ -19,12 +19,6 @@ const app = Vue.createApp({
     resetInput() {
       this.name = "";
     },
-    outputFullname() {
-      console.log("Running outputFullname")
-      if (this.name === "")
-        return "";
-      return this.name + " " + "Güler";
-    },
   },
   computed: {
     fullname() {
@@ -36,4 +30,4 @@ const app = Vue.createApp({
   }
 });
 
-app.mount('#events');
+app.mount("#events");
