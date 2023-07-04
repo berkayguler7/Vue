@@ -22,8 +22,12 @@
       <button v-on:click="setCounter(parameter*1)">Add</button>
       <button v-on:click="setCounter(-parameter)">Remove</button>
       <p>Result: {{ counter }}</p>
-      <input type="text" v-on:input="setName" />
-      <p>{{ name }}</p>
+      <input type="text" v-on:input="setName" v-on:keyup.enter="confirmInput" />
+      <p>{{ confirmedName }}</p>
+      <form action="" v-on:submit.prevent="signUp">
+        <input type="text" />
+        <button>Submit</button>
+      </form>
     </section>
   </body>
 </html>
