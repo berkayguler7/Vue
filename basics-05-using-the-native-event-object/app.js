@@ -2,8 +2,30 @@ const app = Vue.createApp({
   data() {
     return {
       counter: 0,
-      name: ""
+      name: "",
+      // fullname: "",
+      lastName: "",
     };
+  },
+  watch: {
+    counter(value) {
+      if (value > 50) {
+        const that = this;
+        setTimeout(function () {
+          that.counter = 0;
+        }, 2000);
+      }
+    },
+    // name(value) {
+    //   this.fullname = value + " " + this.lastName;
+    // },
+    // lastName(value) {
+    //   if (value === "") {
+    //     this.fullname = "";
+    //   } else {
+    //     this.fullname = this.name + " " + value;
+    //   }
+    // }
   },
   methods: {
     setName(event) {
@@ -14,7 +36,6 @@ const app = Vue.createApp({
     },
     reduce(num) {
       this.counter = this.counter - num;
-      // this.counter--;
     },
     resetInput() {
       this.name = "";
@@ -23,9 +44,9 @@ const app = Vue.createApp({
   computed: {
     fullname() {
       console.log("Running fullname")
-      if (this.name === "")
+      if (this.name === "" || this.lastName === "")
         return "";
-      return this.name + " " + "Güler";
+      return this.name + " " + this.lastName;
     }
   }
 });
