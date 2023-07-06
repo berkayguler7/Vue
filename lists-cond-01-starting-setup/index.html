@@ -24,7 +24,10 @@
 				No goals have been added yet - please start adding some!
 			</p>
 			<ul v-if="goals.length">
-				<li v-for="(goal, index) in goals" @click="deleteGoal(index)">{{ goal }} - {{ index }}</li>
+				<li v-for="(goal, index) in goals" @click="deleteGoal(index)">
+          <p>{{ goal }} - {{ index }}</p>
+          <input type="text" @click.stop>
+        </li>
 			</ul>
 			<!-- <ul>
 				<li v-for="num in 10">{{ num }}</li>
